@@ -30,7 +30,7 @@ services:
   rrhh-api:
     image: ${RRHH_API_IMAGE}
     container_name: "rrhh-api"
-    port:
+    ports:
       - 3000:3000
     environment:
       - DB_USER=${DB_USER}
@@ -44,9 +44,9 @@ services:
       - EMAIL=${EMAIL}
       - PASSWORD=${PASSWORD}
       - SERVICE=${SERVICE}
-      - VIRTUAL_HOST=${MAIN_DOMAIN}
+      - VIRTUAL_HOST=api.${MAIN_DOMAIN}
       - VIRTUAL_PATH=/
-      - LETSENCRYPT_HOST=${MAIN_DOMAIN}
+      - LETSENCRYPT_HOST=api.${MAIN_DOMAIN}
       - LETSENCRYPT_EMAIL=sander.corpco@gmail.com
 
   db:
