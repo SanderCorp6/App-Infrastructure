@@ -23,6 +23,30 @@ variable "api_password" {
 variable "api_image" {
   type = string
 }
+variable "api_jwt_secret" {
+  type = string
+}
+variable "api_jwt_expiration" {
+  type = string
+}
+variable "api_port" {
+  type = string
+}
+variable "db_user" {
+  type = string
+}
+variable "db_host" {
+  type = string
+}
+variable "db_name" {
+  type = string
+}
+variable "db_pass" {
+  type = string
+}
+variable "db_port" {
+  type = string
+}
 
 variable "aws_env" {
   type = string

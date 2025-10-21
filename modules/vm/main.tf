@@ -88,6 +88,15 @@ resource "aws_instance" "rrhh_app_instance" {
             "echo SERVICE=\"${var.api_service}\" >> /home/ubuntu/containers/.env",
             "echo EMAIL=\"${var.api_email}\" >> /home/ubuntu/containers/.env",
             "echo PASSWORD=\"${var.api_password}\" >> /home/ubuntu/containers/.env",
+            "echo JWT_SECRET=\"${var.api_jwt_secret}\" >> /home/ubuntu/containers/.env",
+            "echo JWT_EXPIRES_IN=\"${var.api_jwt_expiration}\" >> /home/ubuntu/containers/.env",
+            "echo PORT=\"${var.api_port}\" >> /home/ubuntu/containers/.env",
+            "echo DB_USER=\"${var.db_user}\" >> /home/ubuntu/containers/.env",
+            "echo DB_HOST=\"${var.db_host}\" >> /home/ubuntu/containers/.env",
+            "echo DB_NAME=\"${var.db_name}\" >> /home/ubuntu/containers/.env",
+            "echo DB_PASS=\"${var.db_pass}\" >> /home/ubuntu/containers/.env",
+            "echo DB_PORT=\"${var.db_port}\" >> /home/ubuntu/containers/.env",
+
             "echo RRHH_API_IMAGE=\"${var.api_image}\" >> /home/ubuntu/containers/.env",
             "echo MAIN_DOMAIN=\"${var.main_domain}\" >> /home/ubuntu/containers/.env",
 
