@@ -75,7 +75,7 @@ resource "aws_instance" "rrhh_app_instance" {
         }
 
         inline = [ 
-            "mkdir /home/ubuntu/containers",
+            "mkdir -p /home/ubuntu/containers/init",
             "mkdir /home/ubuntu/.aws",
             
             "sudo mkdir -p /volumes/nginx/certs",
@@ -111,6 +111,18 @@ resource "aws_instance" "rrhh_app_instance" {
     provisioner "file" {
         source = "${path.module}/containers/docker-compose.yml"
         destination = "/home/ubuntu/containers/docker-compose.yml"
+
+        connection {
+            type = "ssh"
+            host = self.public_ip
+            user = "ubuntu"
+            private_key = file("./keys/rrhh_key")
+        }
+    }
+
+    provisioner "file" {
+        source = "${path.module}/scripts/01_create_tables.sql"
+        destination = "/home/ubuntu/containers/init/01_create_tables.sql"
 
         connection {
             type = "ssh"
