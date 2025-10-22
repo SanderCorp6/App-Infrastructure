@@ -13,7 +13,6 @@ module "vm-linux-dev" {
     api_jwt_expiration = var.API_JWT_EXPIRATION
     api_port = var.API_PORT
     db_user = var.DB_USER
-    db_host = var.DB_HOST
     db_name = var.DB_NAME
     db_pass = var.DB_PASS
     db_port = var.DB_PORT
