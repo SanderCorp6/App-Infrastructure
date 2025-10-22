@@ -49,6 +49,18 @@ services:
       - LETSENCRYPT_HOST=api.${MAIN_DOMAIN}
       - LETSENCRYPT_EMAIL=sander.corpco@gmail.com
 
+  rrhh-app:
+    image: ${RRHH_APP_IMAGE}
+    container_name: "rrhh-app"
+    ports:
+      - 5173:5173
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+      - VIRTUAL_HOST=app01.${MAIN_DOMAIN}
+      - VIRTUAL_PATH=/
+      - LETSENCRYPT_HOST=app01.${MAIN_DOMAIN}
+      - LETSENCRYPT_EMAIL=sander.corpco@gmail.com
+
   db:
     image: postgres:16
     container_name: postgres

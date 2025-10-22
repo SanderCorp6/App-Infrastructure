@@ -98,6 +98,8 @@ resource "aws_instance" "rrhh_app_instance" {
             "echo DB_PORT=\"${var.db_port}\" >> /home/ubuntu/containers/.env",
 
             "echo RRHH_API_IMAGE=\"${var.api_image}\" >> /home/ubuntu/containers/.env",
+            "echo VITE_API_URL=\"${var.api_url}\" >> /home/ubuntu/containers/.env",
+            "echo RRHH_APP_IMAGE=\"${var.app_image}\" >> /home/ubuntu/containers/.env",
             "echo MAIN_DOMAIN=\"${var.main_domain}\" >> /home/ubuntu/containers/.env",
 
             "sudo echo \"[default]\naws_access_key_id=${var.aws_access_key}\naws_secret_access_key=${var.aws_secret_key}\" | sudo tee /home/ubuntu/.aws/credentials >/dev/null",

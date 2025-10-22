@@ -44,6 +44,12 @@ variable "DB_PASS" {
 variable "DB_PORT" {
   type = string
 }
+variable "API_URL" {
+  type = string
+}
+variable "APP_IMAGE" {
+  type = string
+}
 
 variable "AWS_ENV" {
   type = string
