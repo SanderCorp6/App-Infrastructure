@@ -44,6 +44,12 @@ variable "db_pass" {
 variable "db_port" {
   type = string
 }
+variable "api_url" {
+  type = string
+}
+variable "app_image" {
+  type = string
+}
 
 variable "aws_env" {
   type = string

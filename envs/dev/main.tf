@@ -16,6 +16,8 @@ module "vm-linux-dev" {
     db_name = var.DB_NAME
     db_pass = var.DB_PASS
     db_port = var.DB_PORT
+    api_url = var.API_URL
+    app_image = var.APP_IMAGE
 
     aws_env = var.AWS_ENV
     aws_server_name = var.AWS_SERVER_NAME
