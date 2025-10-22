@@ -92,7 +92,7 @@ resource "aws_instance" "rrhh_app_instance" {
             "echo JWT_EXPIRES_IN=\"${var.api_jwt_expiration}\" >> /home/ubuntu/containers/.env",
             "echo PORT=\"${var.api_port}\" >> /home/ubuntu/containers/.env",
             "echo DB_USER=\"${var.db_user}\" >> /home/ubuntu/containers/.env",
-            "echo DB_HOST=\"${var.db_host}\" >> /home/ubuntu/containers/.env",
+            "echo DB_HOST=\"${self.public_ip}\" >> /home/ubuntu/containers/.env",
             "echo DB_NAME=\"${var.db_name}\" >> /home/ubuntu/containers/.env",
             "echo DB_PASS=\"${var.db_pass}\" >> /home/ubuntu/containers/.env",
             "echo DB_PORT=\"${var.db_port}\" >> /home/ubuntu/containers/.env",
