@@ -58,7 +58,7 @@ services:
       - VITE_API_URL=${VITE_API_URL}
       - VIRTUAL_HOST=${MAIN_DOMAIN}
       - VIRTUAL_PATH=/
-      - LETSENCRYPT_HOST=app01.${MAIN_DOMAIN}
+      - LETSENCRYPT_HOST=${MAIN_DOMAIN}
       - LETSENCRYPT_EMAIL=sander.corpco@gmail.com
 
   db:
