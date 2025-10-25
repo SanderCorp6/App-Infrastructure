@@ -15,7 +15,7 @@ env:
   TF_VAR_API_SERVICE: ${{ secrets.TF_VAR_API_SERVICE }}
   TF_VAR_API_EMAIL: ${{ secrets.TF_VAR_API_EMAIL }}
   TF_VAR_API_PASSWORD: ${{ secrets.TF_VAR_API_PASSWORD }}
-  TF_VAR_API_IMAGE: ${{ secrets.TF_VAR_API_EMAIL }}
+  TF_VAR_API_IMAGE: ${{ secrets.TF_VAR_API_IMAGE }}
   TF_VAR_API_JWT_SECRET: ${{ secrets.TF_VAR_API_JWT_SECRET }}
   TF_VAR_API_JWT_EXPIRATION: ${{ secrets.TF_VAR_API_JWT_EXPIRATION }}
   TF_VAR_API_PORT: ${{ secrets.TF_VAR_API_PORT }}
@@ -34,7 +34,7 @@ env:
   TF_VAR_MAIN_DOMAIN: ${{ secrets.TF_VAR_MAIN_DOMAIN }}
  
 jobs:
-    terraform-plan-apply:
+    terraform-plan-destroy:
         runs-on: ubuntu-latest
         steps:
             - name: Clone repository
