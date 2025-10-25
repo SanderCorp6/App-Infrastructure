@@ -134,6 +134,18 @@ resource "aws_instance" "rrhh_app_instance" {
         }
     }
 
+    provisioner "file" {
+        source = "${path.module}/scripts/02_insert_data.sql"
+        destination = "/home/ubuntu/containers/init/02_insert_data.sql"
+
+        connection {
+            type = "ssh"
+            host = self.public_ip
+            user = "ubuntu"
+            private_key = file("./keys/rrhh_key")
+        }
+    }
+    
     tags = {
         Name = "${var.aws_server_name}-${var.aws_env}"
     }
