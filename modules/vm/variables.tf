@@ -10,6 +10,10 @@ variable "aws_region" {
   type = string
   default = ""
 }
+variable "aws_bucket_name" {
+  type = string
+  default = ""
+}
 
 variable "api_service" {
   type = string
@@ -42,6 +46,9 @@ variable "db_pass" {
   type = string
 }
 variable "db_port" {
+  type = string
+}
+variable "frontend_url" {
   type = string
 }
 variable "api_url" {

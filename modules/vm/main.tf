@@ -96,6 +96,11 @@ resource "aws_instance" "rrhh_app_instance" {
             "echo DB_NAME=\"${var.db_name}\" >> /home/ubuntu/containers/.env",
             "echo DB_PASS=\"${var.db_pass}\" >> /home/ubuntu/containers/.env",
             "echo DB_PORT=\"${var.db_port}\" >> /home/ubuntu/containers/.env",
+            "echo FRONTEND_URL=\"${var.frontend_url}\" >> /home/ubuntu/containers/.env",
+            "echo AWS_ACCESS_KEY=\"${var.aws_access_key}\" >> /home/ubuntu/containers/.env",
+            "echo AWS_SECRET_KEY=\"${var.aws_secret_key}\" >> /home/ubuntu/containers/.env",
+            "echo AWS_REGION=\"${var.aws_region}\" >> /home/ubuntu/containers/.env",
+            "echo AWS_BUCKET_NAME=\"${var.aws_bucket_name}\" >> /home/ubuntu/containers/.env",
 
             "echo RRHH_API_IMAGE=\"${var.api_image}\" >> /home/ubuntu/containers/.env",
             "echo VITE_API_URL=\"${var.api_url}\" >> /home/ubuntu/containers/.env",
