@@ -4,6 +4,7 @@ module "vm-linux-dev" {
     aws_access_key = var.AWS_ACCESS_KEY
     aws_secret_key =  var.AWS_SECRET_KEY
     aws_region = var.AWS_REGION
+    aws_bucket_name = var.AWS_BUCKET_NAME
     
     api_service = var.API_SERVICE
     api_email = var.API_EMAIL
@@ -16,6 +17,7 @@ module "vm-linux-dev" {
     db_name = var.DB_NAME
     db_pass = var.DB_PASS
     db_port = var.DB_PORT
+    frontend_url = var.FRONTEND_URL
     api_url = var.API_URL
     app_image = var.APP_IMAGE
 

@@ -1,13 +1,17 @@
 variable "AWS_ACCESS_KEY" {
-  type = string
+  type    = string
   default = ""
 }
 variable "AWS_SECRET_KEY" {
-  type = string
+  type    = string
   default = ""
 }
 variable "AWS_REGION" {
-  type = string
+  type    = string
+  default = ""
+}
+variable "AWS_BUCKET_NAME" {
+  type    = string
   default = ""
 }
 
@@ -42,6 +46,9 @@ variable "DB_PASS" {
   type = string
 }
 variable "DB_PORT" {
+  type = string
+}
+variable "FRONTEND_URL" {
   type = string
 }
 variable "API_URL" {
